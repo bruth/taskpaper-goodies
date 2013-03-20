@@ -1,0 +1,77 @@
+<theme>
+	<!-- Window Style -->
+	<color id="foreground" red="0.3" green="0.3" blue="0.3" alpha="1.0" />
+	<color id="background" red="0.95" green="0.95" blue="0.95" alpha="1.0" />
+	<window foregroundColorID="foreground" backgroundColorID="background" shouldUseHUDScrollers="no" />
+
+	<!-- Text View Style -->
+	<color id="tag" extendsColorID="foreground" alpha="0.3" />
+	<color id="handle" extendsColorID="foreground" alpha="0.3" />
+	<color id="insertionPoint" extendsColorID="foreground" green="0.5" red="0.5" alpha="1.0" />
+	<color id="selection" red="0.7" green="0.835" blue="1" alpha="1.0" />
+	<font id="base" name="Droid Sans" size="14" />
+	<characterStyle id="base" fontID="base" foregroundColorID="foreground" />
+	<paragraphStyle id="base" paragraphSpacingBefore="0" paragraphSpacing="0"
+        lineSpacing="5" lineHeightMultiple="0.0" alignment="NSLeftTextAlignment" />
+	<textView
+		shouldAntialiasText="yes"
+		shouldShowNoteHandles="no"
+		shouldShowProjectHandles="no"
+		defaultCharacterStyleID="base"
+		insertionPointColorID="insertionPoint"
+		selectionColorID="selection"
+		handleColorID="handle"
+		tagColorID="tag" />
+
+	<!-- Task style. This section defines the styles that are applied to task lines. -->
+	<color id="task" extendsColorID="foreground" />
+	<font id="task" extendsFontID="base" />
+	<characterStyle id="task" fontID="task" foregroundColorID="task" />
+	<entryRule matchesQuery="type = task" lineCharacterStyleID="task" paragraphStyleID="base" />
+
+	<!-- Project style. This section defines the styles that are applied to project lines. -->
+	<color id="project" extendsColorID="foreground" />
+	<font id="project" extendsFontID="base" fontTraitMask="NSBoldFontMask"/>
+	<characterStyle id="project" fontID="project" foregroundColorID="project" />
+	<paragraphStyle id="project" extendsParagraphStyleID="base" paragraphSpacingBefore="5" paragraphSpacing="5" />
+	<entryRule matchesQuery="type = &quot;project&quot;" lineCharacterStyleID="project" paragraphStyleID="project" />
+
+	<!-- Note style. This section defines the styles that are applied to note lines. -->
+	<color id="note" extendsColorID="foreground" alpha="0.6" />
+	<font id="note" name="Droid Sans" size="12" />
+	<characterStyle id="note" fontID="note" foregroundColorID="note" />
+	<paragraphStyle id="note" extendsParagraphStyleID="base" paragraphSpacingBefore="0" paragraphSpacing="10" />
+	<entryRule matchesQuery="type = note" lineCharacterStyleID="note" paragraphStyleID="note" />
+
+	<!-- GroupHeader style. This section defines the styles that are applied to groupHeader lines. (top level projects) -->
+	<color id="groupHeader" extendsColorID="foreground" />
+	<font id="groupHeader" extendsFontID="base" size="18" fontTraitMask="NSBoldFontMask" />
+	<characterStyle id="groupHeader" fontID="groupHeader" foregroundColorID="groupHeader" />
+	<paragraphStyle id="groupHeader" extendsParagraphStyleID="base" paragraphSpacingBefore="10" paragraphSpacing="10" />
+	<entryRule matchesQuery="type = &quot;project&quot; and level = 0" paragraphStyleID="groupHeader" lineCharacterStyleID="groupHeader" />
+
+	<!-- @today style -->
+    <color id="today" red="0" green="0.5" blue="0.7" alpha="1" />
+	<characterStyle id="today" foregroundColorID="today" />
+	<entryRule matchesQuery="@today" contentCharacterStyleID="today" />
+
+	<!-- @bug style -->
+    <color id="bug" red="0.7" blue="0" green="0" alpha="1" />
+	<characterStyle id="bug" foregroundColorID="bug" />
+	<entryRule matchesQuery="@bug" contentCharacterStyleID="bug" />
+
+	<!-- @now style -->
+    <color id="now" red="0.8" blue="0" green="0.7" alpha="1" />
+	<characterStyle id="now" foregroundColorID="now" />
+	<entryRule matchesQuery="@now" contentCharacterStyleID="now" />
+
+	<!-- @done style. This should always be last to take precendence -->
+    <color id="done" extendsColorID="foreground" alpha="0.2" />
+	<characterStyle id="done" strikethroughStyle="NSUnderlineStyleSingle" foregroundColorID="done" />
+	<entryRule matchesQuery="@done" contentCharacterStyleID="done" />
+
+	<!-- @cancelled style. This should always be last to take precendence -->
+    <color id="cancelled" extendsColorID="foreground" alpha="0.2" />
+	<characterStyle id="cancelled" strikethroughStyle="NSUnderlineStyleSingle" foregroundColorID="cancelled" />
+	<entryRule matchesQuery="@cancelled" contentCharacterStyleID="cancelled" />
+</theme>
